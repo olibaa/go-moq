@@ -2,6 +2,8 @@ package main
 
 import "context"
 
+//go:generate moq -out mockuser_usecase.go . UserInputPort
+
 type UserInputPort interface {
 	Execute(context.Context, string) (*User, error)
 }

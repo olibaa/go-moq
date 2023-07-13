@@ -3,12 +3,13 @@ package main_test
 import (
 	"context"
 	"errors"
-	"github.com/stretchr/testify/assert"
 	moq "olibaa/go-moq"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
-func TestGetUserByID(t *testing.T) {
+func Test_UserRepository_Get(t *testing.T) {
 	// GetFuncでMockを作る。Get Methodで取得できるようになる。
 	mockRepo := &moq.UserRepositoryInterfaceMock{
 		GetFunc: func(ctx context.Context, id string) (*moq.User, error) {
